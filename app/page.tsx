@@ -144,9 +144,9 @@ export default async function LandingPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { name: 'Free', price: '$0', period: '/month', desc: 'Perfect for trying things out', features: ['10 briefs / month', '3 clients', 'Basic templates', 'PDF export'], cta: 'Get Started Free', dark: false },
-              { name: 'Pro', price: '$29', period: '/month', desc: 'For freelance designers', features: ['Unlimited briefs', 'Unlimited clients', 'AI brief generation', 'Client portal', 'Analytics', 'Arabic & English'], cta: 'Start Free Trial', dark: true },
-              { name: 'Studio', price: '$79', period: '/month', desc: 'For agencies and teams', features: ['Everything in Pro', '5 team seats', 'Shared workspace', 'White-label briefs', 'API access'], cta: 'Start Free Trial', dark: false },
+              { name: 'Free', cta_href: '/sign-up', price: '$0', period: '/month', desc: 'Perfect for trying things out', features: ['10 briefs / month', '3 clients', 'Basic templates', 'PDF export'], cta: 'Get Started Free', dark: false },
+              { name: 'Pro', cta_href: '/upgrade?plan=pro', price: '$29', period: '/month', desc: 'For freelance designers', features: ['Unlimited briefs', 'Unlimited clients', 'AI brief generation', 'Client portal', 'Analytics', 'Arabic & English'], cta: 'Start Free Trial', dark: true },
+              { name: 'Studio', cta_href: '/upgrade?plan=studio', price: '$79', period: '/month', desc: 'For agencies and teams', features: ['Everything in Pro', '5 team seats', 'Shared workspace', 'White-label briefs', 'API access'], cta: 'Start Free Trial', dark: false },
             ].map(plan => (
               <div key={plan.name} className={`rounded-2xl p-8 ${plan.dark ? 'bg-[#0A0A0A] text-white' : 'bg-white border border-[#E0E0E0]'}`}>
                 <div className="mb-6">
@@ -157,7 +157,7 @@ export default async function LandingPage() {
                     <span className={`text-sm ${plan.dark ? 'text-[#404040]' : 'text-[#B3B3B3]'}`}>{plan.period}</span>
                   </div>
                 </div>
-                <Link href="/sign-up" className={`block text-center py-3 rounded-xl text-sm font-semibold mb-6 transition-all ${plan.dark ? 'bg-white text-[#0A0A0A] hover:bg-[#F5F5F5]' : 'bg-[#0A0A0A] text-white hover:bg-[#1A1A1A]'}`}>
+                <Link href={plan.name === "Pro" ? "/upgrade?plan=pro" : plan.name === "Studio" ? "/upgrade?plan=studio" : "/sign-up"} className={`block text-center py-3 rounded-xl text-sm font-semibold mb-6 transition-all ${plan.dark ? 'bg-white text-[#0A0A0A] hover:bg-[#F5F5F5]' : 'bg-[#0A0A0A] text-white hover:bg-[#1A1A1A]'}`}>
                   {plan.cta}
                 </Link>
                 <ul className="space-y-2.5">
