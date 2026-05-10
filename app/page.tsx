@@ -104,7 +104,7 @@ export default async function LandingPage() {
             <p className="text-lg text-[#6B6B6B]">Start free. Upgrade when ready.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[{name:'Free',price:'Free',period:'/month',desc:'For trying things out',features:['10 briefs / month','3 clients','Basic templates','PDF export'],dark:false},{name:'Pro',price:'$29 ',period:'/month',desc:'For freelance designers',features:['Unlimited briefs','Unlimited clients','AI generation','Client portal','Analytics','Arabic & English'],dark:true},{name:'Studio',price:'$79',period:'/month',desc:'For agencies and teams',features:['Everything in Pro','5 team seats','Shared workspace','White-label','API access'],dark:false}].map(plan=>(
+            {[{name:'Free',price:'0',period:'/month',desc:'For trying things out',features:['10 briefs / month','3 clients','Basic templates','PDF export'],dark:false},{name:'Pro',price:'$29 ',period:'/month',desc:'For freelance designers',features:['Unlimited briefs','Unlimited clients','AI generation','Client portal','Analytics','Arabic & English'],dark:true},{name:'Studio',price:'$79',period:'/month',desc:'For agencies and teams',features:['Everything in Pro','5 team seats','Shared workspace','White-label','API access'],dark:false}].map(plan=>(
               <div key={plan.name} className={`rounded-2xl p-8 ${plan.dark?'bg-[#0A0A0A]':'bg-white border border-[#E0E0E0]'}`}>
                 <p className="text-sm font-semibold mb-1 text-[#6B6B6B]">{plan.name}</p>
                 <p className={`text-xs mb-4 ${plan.dark?'text-[#404040]':'text-[#B3B3B3]'}`}>{plan.desc}</p>
