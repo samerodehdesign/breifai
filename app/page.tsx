@@ -108,7 +108,7 @@ export default async function LandingPage() {
               <div key={plan.name} className={`rounded-2xl p-8 ${plan.dark?'bg-[#0A0A0A]':'bg-white border border-[#E0E0E0]'}`}>
                 <p className="text-sm font-semibold mb-1 text-[#6B6B6B]">{plan.name}</p>
                 <p className={`text-xs mb-4 ${plan.dark?'text-[#404040]':'text-[#B3B3B3]'}`}>{plan.desc}</p>
-                <div className="flex items-baseline gap-1 mb-6"><span className="text-5xl font-black">{plan.price === '$0' ? 'Free' : plan.price}</span><span className={`text-sm ${plan.dark?'text-[#404040]':'text-[#B3B3B3]'}`}>{plan.period}</span></div>
+                <div className="flex items-baseline gap-1 mb-6"><span className={`text-5xl font-black ${plan.dark ? 'text-white' : 'text-[#0A0A0A]'}`}>{plan.price === '$0' ? 'Free' : plan.price}</span><span className={`text-sm ${plan.dark?'text-[#404040]':'text-[#B3B3B3]'}`}>{plan.period}</span></div>
                 <Link href="/sign-up" className={`block text-center py-3 rounded-xl text-sm font-semibold mb-6 ${plan.dark?'bg-white text-[#0A0A0A] hover:bg-[#F5F5F5]':'bg-[#0A0A0A] text-white hover:bg-[#1A1A1A]'}`}>Get Started</Link>
                 <ul className="space-y-2.5">{plan.features.map(f=><li key={f} className="flex items-center gap-2 text-sm"><span className={plan.dark?'text-[#6B6B6B]':'text-green-600'}>✓</span><span className={plan.dark?'text-[#6B6B6B]':'text-[#6B6B6B]'}>{f}</span></li>)}</ul>
               </div>
